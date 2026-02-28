@@ -1,4 +1,7 @@
-# Get only supported subnets from default VPC
+data "aws_vpc" "default" {
+  default = true
+}
+
 data "aws_subnets" "public" {
   filter {
     name   = "vpc-id"
